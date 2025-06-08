@@ -150,7 +150,7 @@
             column-gap: 40px;
             grid-template-rows: 1fr 2fr 1fr;
             align-items: top;
-             overflow: hidden;
+            overflow: hidden;
 
 
             grid-template-areas:
@@ -438,8 +438,7 @@
             <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }' style="
         margin-bottom: 50px;
         margin-top: 20px;">
-                <div class="gallery-cell"
-                >
+                <div class="gallery-cell">
                     <div class="cell-item" style="grid-area: a;">
                         <h4>
                             UNAM Triángulo Sagrado
@@ -682,11 +681,12 @@
                                 </h5>
                             </div>
                             <div class="media-content"
-                                  style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                                 <img src="img/code_ratio.png" style=" width:100%; height: auto; border-radius: 8px;">
 
                                 <video controls style="width: 100%; border-radius: 8px;">
-                                    <source src="img/painting_creation.mp4" type="video/mp4"> </video>
+                                    <source src="img/painting_creation.mp4" type="video/mp4">
+                                </video>
                             </div>
                         </div>
 
@@ -704,7 +704,8 @@
                             <div class="media-content"
                                 style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                                 <video controls style="width: 100%; border-radius: 8px;">
-                                    <source src="img/OrdenVertex_02.mp4" type="video/mp4"> </video>
+                                    <source src="img/OrdenVertex_02.mp4" type="video/mp4">
+                                </video>
                                 <img src="img/Triangles.jpg" style=" width:100%; height: auto; border-radius: 8px;">
                             </div>
                         </div>
@@ -724,13 +725,12 @@
                                 </h5>
                             </div>
                             <div class="media-content"
-                            style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">
-                                <img src="img/uvs_mesh.png"
-                                    style="max-width: 100%; height: auto; border-radius: 8px;">
-                                    <img src="img/uv_exp.png"
-                                    style="max-width: 100%; height: auto; border-radius: 8px;">
-                                    <video controls style="width: 100%; border-radius: 8px;">
-                                    <source src="img/uv_test.mp4" type="video/mp4"></video>
+                                style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">
+                                <img src="img/uvs_mesh.png" style="max-width: 100%; height: auto; border-radius: 8px;">
+                                <img src="img/uv_exp.png" style="max-width: 100%; height: auto; border-radius: 8px;">
+                                <video controls style="width: 100%; border-radius: 8px;">
+                                    <source src="img/uv_test.mp4" type="video/mp4">
+                                </video>
                                 </video>
                             </div>
                         </div>
@@ -764,16 +764,19 @@
                                     wanted to achieve a crack-like noise, so I used a Voronoi noise, which is completely
                                     different if you change its values. However, this particular node doesn’t let me
                                     access and modify the edges of the cells. Consequently, I made a Custom Voronoi node
-                                    using hlsl based on Íñigo Quilez’s one. This function calculates the distance from edges, so I can make them thinner or thicker. the distance I distorted it by plugging in the combined
+                                    using hlsl based on Íñigo Quilez’s one. This function calculates the distance from
+                                    edges, so I can make them thinner or thicker. the distance I distorted it by
+                                    plugging in the combined
                                     noises into its UVs.
                                 </h5>
                             </div>
-                            <div class="media-content"  style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">
+                            <div class="media-content"
+                                style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">
                                 <img src="img/crack_custom.png"
                                     style="max-width: 100%; height: auto; border-radius: 8px;">
-                                    <img src="img/crack_hlsl.png"
+                                <img src="img/crack_hlsl.png"
                                     style="max-width: 100%; height: auto; border-radius: 8px;">
-                                     <video controls style="width: 100%; border-radius: 8px;">
+                                <video controls style="width: 100%; border-radius: 8px;">
                                     <source src="img/crack_edge.mp4" type="video/mp4">
                                 </video>
                             </div>
@@ -790,7 +793,7 @@
                             </div>
                             <div class="media-content"
                                 style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                                 <img src="img/crack_creator.png"
+                                <img src="img/crack_creator.png"
                                     style="max-width: 100%; height: auto; border-radius: 8px;">
                                 <video controls style="width: 100%; border-radius: 8px;">
                                     <source src="img/crack_final.mp4" type="video/mp4">
@@ -815,10 +818,10 @@
                                 </h5>
                             </div>
                             <div class="media-content"
-                            style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                                 <img src="img/paint_coord.png"
                                     style="max-width: 100%; height: auto; border-radius: 8px;">
-                                    <img src="img/paint_line.png"
+                                <img src="img/paint_line.png"
                                     style="max-width: 100%; height: auto; border-radius: 8px;">
                             </div>
                         </div>
@@ -843,7 +846,8 @@
                             <div class="media-text">
                                 <h5 style="color: #202932; margin-right: 30px;">This is a texture that feeds itself to
                                     get that brush stroke.
-                                    Then, I used another Custom Render Texture to bake the different brushes into one single
+                                    Then, I used another Custom Render Texture to bake the different brushes into one
+                                    single
                                     texture.
 
                                 </h5>
@@ -864,23 +868,41 @@
                         <h4 style="color: #202932; margin-bottom: 30px;">Extras</h4>
 
                         <!-- c) text, image and video -->
-                        <div class="media-pair">
-                            <div class="media-text">
-                                <h5 style="color: #202932; margin-right: 30px;">Painting textures <br>
-                                    Hover Shader <br>
-                                    Easel Adjustment <br>
-                                    Trimsheets
-
-
-                                </h5>
-                            </div>
+                        <div >
                             <div class="media-content"
-                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                                <img src="img/blog2c.jpg" alt="Cracking result"
-                                    style="width: 100%; border-radius: 8px;">
-                                <video controls style="width: 100%; border-radius: 8px;">
-                                    <source src="img/blog2c-vid.mp4" type="video/mp4">
-                                </video>
+                                style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 15px; align-items: center; ">
+                                <div style="grid-template-rows: 1fr 1fr 1fr; align-items: center; width:100%;">
+                                    <img src="img/extra_paint.png" style="width:100%; border-radius: 8px;">
+                                    <img src="img/extra_canvas.png" style="width:100%; border-radius: 8px;">
+                                    <h5 style="color: #202932; ">I designed the painting and canvas textures in Adobe
+                                        Substance.
+
+                                    </h5>
+                                </div>
+                                <div style="grid-template-rows: 2fr 1fr ; align-items: center;">
+                                    <video controls style="width: 100%; border-radius: 8px;">
+                                        <source src="img/extra_hover.mp4" type="video/mp4">
+                                    </video>
+                                    <h5 style="color: #202932; ">I created a hover shader with a ver subtle fresnel
+                                        animation to indicate which things are interactable.
+
+                                    </h5>
+                                </div>
+                                <div style="grid-template-rows: 2fr 1fr ; align-items: center;">
+                                    <video controls style="width: 100%; border-radius: 8px;">
+                                        <source src="img/painting_creation.mp4" type="video/mp4">
+                                    </video>
+                                    <h5 style="color: #202932; ">The easel adjust automatically to the painting's height.
+
+                                    </h5>
+                                </div>
+                                 <div style="grid-template-rows: 1fr 1fr ; align-items: center;">
+                                                                        <img src="img/extra_trim.png" style="width:70%; border:10px;border-radius: 8px;">
+
+                                    <h5 style="color: #202932; ">I created trimsheets for the walls.
+
+                                    </h5>
+                                </div>
                             </div>
                         </div>
                     </div>
