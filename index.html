@@ -244,7 +244,7 @@
 
         .media-pair {
             display: grid;
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 1fr 3fr;
             gap: 30px;
             align-items: center;
             margin-bottom: 10px;
@@ -814,8 +814,11 @@
 
                                 </h5>
                             </div>
-                            <div class="media-content">
-                                <img src="img/blog2a.jpg" alt="Cracking the painting step a"
+                            <div class="media-content"
+                            style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                <img src="img/paint_coord.png"
+                                    style="max-width: 100%; height: auto; border-radius: 8px;">
+                                    <img src="img/paint_line.png"
                                     style="max-width: 100%; height: auto; border-radius: 8px;">
                             </div>
                         </div>
@@ -829,8 +832,9 @@
                                 </h5>
                             </div>
                             <div class="media-content">
-                                <img src="img/blog2b.jpg" alt="Cracking the painting step b"
-                                    style="max-width: 100%; height: auto; border-radius: 8px;">
+                                <video controls style="width: 60%; border-radius: 8px;">
+                                    <source src="img/paint_brush.mp4" type="video/mp4">
+                                </video>
                             </div>
                         </div>
 
@@ -839,17 +843,17 @@
                             <div class="media-text">
                                 <h5 style="color: #202932; margin-right: 30px;">This is a texture that feeds itself to
                                     get that brush stroke.
-                                    Then, I used another Custom Render Texture to bake different brushes into one single
+                                    Then, I used another Custom Render Texture to bake the different brushes into one single
                                     texture.
 
                                 </h5>
                             </div>
                             <div class="media-content"
                                 style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                                <img src="img/blog2c.jpg" alt="Cracking result"
+                                <img src="img/paint_blit.png" alt="Cracking result"
                                     style="width: 100%; border-radius: 8px;">
                                 <video controls style="width: 100%; border-radius: 8px;">
-                                    <source src="img/blog2c-vid.mp4" type="video/mp4">
+                                    <source src="img/paint_final.mp4" type="video/mp4">
                                 </video>
                             </div>
                         </div>
