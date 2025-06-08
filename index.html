@@ -150,6 +150,8 @@
             column-gap: 40px;
             grid-template-rows: 1fr 2fr 1fr;
             align-items: top;
+             overflow: hidden;
+
 
             grid-template-areas:
                 "a a"
@@ -436,7 +438,8 @@
             <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }' style="
         margin-bottom: 50px;
         margin-top: 20px;">
-                <div class="gallery-cell">
+                <div class="gallery-cell"
+                >
                     <div class="cell-item" style="grid-area: a;">
                         <h4>
                             UNAM Triángulo Sagrado
@@ -678,8 +681,12 @@
                                     the aspect ratio of the painting.
                                 </h5>
                             </div>
-                            <div class="media-content">
+                            <div class="media-content"
+                                  style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                                 <img src="img/code_ratio.png" style=" width:100%; height: auto; border-radius: 8px;">
+
+                                <video controls style="width: 100%; border-radius: 8px;">
+                                    <source src="img/painting_creation.mp4" type="video/mp4"> </video>
                             </div>
                         </div>
 
@@ -745,8 +752,8 @@
                                 </h5>
                             </div>
                             <div class="media-content">
-                                <img src="img/blog2a.jpg" alt="Cracking the painting step a"
-                                    style="max-width: 100%; height: auto; border-radius: 8px;">
+                                <img src="img/crack_noise.png" alt="Cracking the painting step a"
+                                    style="max-width: 40%; height: auto; border-radius: 8px;">
                             </div>
                         </div>
 
@@ -757,13 +764,18 @@
                                     wanted to achieve a crack-like noise, so I used a Voronoi noise, which is completely
                                     different if you change its values. However, this particular node doesn’t let me
                                     access and modify the edges of the cells. Consequently, I made a Custom Voronoi node
-                                    using hlsl based on Íñigo Quilez’s one. I distorted it by plugging in the combined
+                                    using hlsl based on Íñigo Quilez’s one. This function calculates the distance from edges, so I can make them thinner or thicker. the distance I distorted it by plugging in the combined
                                     noises into its UVs.
                                 </h5>
                             </div>
-                            <div class="media-content">
-                                <img src="img/blog2b.jpg" alt="Cracking the painting step b"
+                            <div class="media-content"  style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">
+                                <img src="img/crack_custom.png"
                                     style="max-width: 100%; height: auto; border-radius: 8px;">
+                                    <img src="img/crack_hlsl.png"
+                                    style="max-width: 100%; height: auto; border-radius: 8px;">
+                                     <video controls style="width: 100%; border-radius: 8px;">
+                                    <source src="img/crack_edge.mp4" type="video/mp4">
+                                </video>
                             </div>
                         </div>
 
@@ -778,10 +790,10 @@
                             </div>
                             <div class="media-content"
                                 style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                                <img src="img/blog2c.jpg" alt="Cracking result"
-                                    style="width: 100%; border-radius: 8px;">
+                                 <img src="img/crack_creator.png"
+                                    style="max-width: 100%; height: auto; border-radius: 8px;">
                                 <video controls style="width: 100%; border-radius: 8px;">
-                                    <source src="img/blog2c-vid.mp4" type="video/mp4">
+                                    <source src="img/crack_final.mp4" type="video/mp4">
                                 </video>
                             </div>
                         </div>
