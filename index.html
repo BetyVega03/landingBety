@@ -670,11 +670,9 @@ To create a mesh through code, vertex, triangles, and UVs are needed. First, I g
                         <!-- b) text and 2 videos -->
                         <div class="media-pair">
                             <div class="media-text">
-                                <h5 style="color: #202932; margin-right: 30px;">Text description for creating the
-                                    painting
-                                    part b. This would explain the process shown in the two accompanying videos. The
-                                    text
-                                    remains readable while the videos play.</h5>
+                                <h5 style="color: #202932; margin-right: 30px;">This mesh is made to have x numbers of faces, front and back (like a grid). So, based on the aspect ratio, I created the faces, first of the front, then of the back with an offset representing the thickness of the canvas.
+Then, I created the triangles in the correct order, so that their normal would face the correct way.
+</h5>
                             </div>
                             <div class="media-content"
                                 style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
@@ -690,9 +688,10 @@ To create a mesh through code, vertex, triangles, and UVs are needed. First, I g
                         <!-- c) text and image -->
                         <div class="media-pair">
                             <div class="media-text">
-                                <h5 style="color: #202932; margin-right: 30px;">Text description for creating the
-                                    painting
-                                    part c. This would explain the next phase of the process shown in the image.</h5>
+                                <h5 style="color: #202932; margin-right: 30px;">Finally, I did the UVs. I wanted to have all the textures in the same material. Therefore, I determined that the painting per se would occupy the first half of the UV space, while the canvas texture would be on the other half. The tricky part was the thickness, as it can vary on size. So, what I did was to put their vertex UVs “inside” the canvas texture, so that the texturing would be seamless.
+The needed deformations are carried out in the shader, like the canvas texture tiling, etc.
+
+</h5>
                             </div>
                             <div class="media-content">
                                 <img src="img/blog1c.jpg" alt="Creating the painting step c"
@@ -705,16 +704,14 @@ To create a mesh through code, vertex, triangles, and UVs are needed. First, I g
 
                     <!-- Second Section -->
                     <div class="blog-section" style="margin-bottom: 60px;">
-                        <h4 style="color: #202932; margin-bottom: 30px;">Cracking the Painting</h4>
+                        <h4 style="color: #202932; margin-bottom: 30px;">Damaging the Painting</h4>
 
                         <!-- a) text and image side by side -->
                         <div class="media-pair">
                             <div class="media-text">
-                                <h5 style="color: #202932; margin-right: 30px;">Text description for cracking the
-                                    painting
-                                    part a. This explains the deliberate cracking process we used to create authentic
-                                    aging
-                                    effects.</h5>
+                                <h5 style="color: #202932; margin-right: 30px;">I created a shader to generate “procedural” damage to the painting.
+I imported packed noises with different characteristics. I combined them changing their tiling and offset, and using dot product. 
+</h5>
                             </div>
                             <div class="media-content">
                                 <img src="img/blog2a.jpg" alt="Cracking the painting step a"
@@ -725,9 +722,7 @@ To create a mesh through code, vertex, triangles, and UVs are needed. First, I g
                         <!-- b) text and image -->
                         <div class="media-pair">
                             <div class="media-text">
-                                <h5 style="color: #202932; margin-right: 30px;">Text description for cracking the
-                                    painting
-                                    part b. Details about the materials used to create controlled cracking patterns.
+                                <h5 style="color: #202932; margin-right: 30px;">But this is not procedural enough. I wanted to achieve a crack-like noise, so I used a Voronoi noise, which is completely different if you change its values. However, this particular node doesn’t let me access and modify the edges of the cells. Consequently, I made a Custom Voronoi node using hlsl based on Íñigo Quilez’s one. I distorted it by plugging in the combined noises into its UVs.
                                 </h5>
                             </div>
                             <div class="media-content">
@@ -739,10 +734,7 @@ To create a mesh through code, vertex, triangles, and UVs are needed. First, I g
                         <!-- c) text, image and video -->
                         <div class="media-pair">
                             <div class="media-text">
-                                <h5 style="color: #202932; margin-right: 30px;">Text description for cracking the
-                                    painting
-                                    part c. Showing both the static result and the process video of the cracking
-                                    technique.
+                                <h5 style="color: #202932; margin-right: 30px;">I exposed different parameters that are updated randomly each time a painting is selected. This texture is then integrated into the painting shader as a mask and as a heightmap for parallax occlusion mapping.
                                 </h5>
                             </div>
                             <div class="media-content"
@@ -755,6 +747,82 @@ To create a mesh through code, vertex, triangles, and UVs are needed. First, I g
                             </div>
                         </div>
                     </div>
+
+									<!-- Third Section -->
+                    <div class="blog-section" style="margin-bottom: 60px;">
+                        <h4 style="color: #202932; margin-bottom: 30px;">Painting on the Painting</h4>
+
+                        <!-- a) text and image side by side -->
+                        <div class="media-pair">
+                            <div class="media-text">
+                                <h5 style="color: #202932; margin-right: 30px;">I designed a painting mechanism using shaders and Custom Render Textures. 
+First, I obtained the UV coordinates through the mouse position. Using the past and current position, I calculated different vectors and their projections, as well as length and lerps to get a smooth line. 
+
+</h5>
+                            </div>
+                            <div class="media-content">
+                                <img src="img/blog2a.jpg" alt="Cracking the painting step a"
+                                    style="max-width: 100%; height: auto; border-radius: 8px;">
+                            </div>
+                        </div>
+
+                        <!-- b) text and image -->
+                        <div class="media-pair">
+                            <div class="media-text">
+                                <h5 style="color: #202932; margin-right: 30px;">I imported different brush alphas. Using the past mathematical operations, I distorted their UVs so that the alpha “drags” to the brush position. Also note that it is possible to change the brush sizes.
+                                </h5>
+                            </div>
+                            <div class="media-content">
+                                <img src="img/blog2b.jpg" alt="Cracking the painting step b"
+                                    style="max-width: 100%; height: auto; border-radius: 8px;">
+                            </div>
+                        </div>
+
+                        <!-- c) text, image and video -->
+                        <div class="media-pair">
+                            <div class="media-text">
+                                <h5 style="color: #202932; margin-right: 30px;">This is a texture that feeds itself to get that brush stroke.
+Then, I used another Custom Render Texture to bake different brushes into one single texture.
+
+                                </h5>
+                            </div>
+                            <div class="media-content"
+                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                <img src="img/blog2c.jpg" alt="Cracking result"
+                                    style="width: 100%; border-radius: 8px;">
+                                <video controls style="width: 100%; border-radius: 8px;">
+                                    <source src="img/blog2c-vid.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+
+										<!-- Final Section -->
+                    <div class="blog-section" style="margin-bottom: 60px;">
+                        <h4 style="color: #202932; margin-bottom: 30px;">Extras</h4>
+
+                        <!-- c) text, image and video -->
+                        <div class="media-pair">
+                            <div class="media-text">
+                                <h5 style="color: #202932; margin-right: 30px;">Painting textures <br>
+Hover Shader <br>
+Easel Adjustment <br>
+Trimsheets
+
+
+                                </h5>
+                            </div>
+                            <div class="media-content"
+                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                <img src="img/blog2c.jpg" alt="Cracking result"
+                                    style="width: 100%; border-radius: 8px;">
+                                <video controls style="width: 100%; border-radius: 8px;">
+                                    <source src="img/blog2c-vid.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+									
                 </div>
             </div>
         </div>
