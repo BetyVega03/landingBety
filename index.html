@@ -1,53 +1,838 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bety Vega</title>
+
+    <title>Bety Vega Portafolio</title>
     <link rel="icon" type="image/png" size="32x32" href="img/miniLogo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
     <style>
-        html{
-            background-color:#fffcf0;
+        html {
+            height: 100%;
+            background-color: #fff9e1;
+            scroll-behavior: smooth;
         }
-        /** CAMBIAR FONT
-        // <weight>: Use a value from 100 to 900
-            // <uniquifier>: Use a unique and descriptive class name
-                **/
-        h1{
-            color: #5c63c9;
-            font-family: "Outfit", sans-serif;
+
+        h1 {
+            /**
+            // <weight>: Use a value from 100 to 900
+            // <uniquifier>: Use a unique and descriptive class name.**/
+            color: #202932;
+            font-family: "Boldonse", sans-serif;
+            font-size: 120px;
+            font-weight: 900;
+            font-style: normal;
+            line-height: 180px;
+        }
+
+        h2 {
+            /** CAMBIAR FONT
+            // <weight>: Use a value from 100 to 900
+            // <uniquifier>: Use a unique and descriptive class **/
+            color: #202932;
+            font-family: "Boldonse", sans-serif;
             font-optical-sizing: auto;
-             font-weight: 700;
+            font-weight: 400;
             font-style: normal;
             font-size: 50px;
+            text-align: left;
+        }
+
+        h3 {
+            /** CAMBIAR FONT
+            // <weight>: Use a value from 100 to 900
+            // <uniquifier>: Use a unique and descriptive class **/
+            color: #fff9e1;
+            font-family: "Outfit", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 20px;
             text-align: center;
         }
-        /** LLAMAR A LA CAJITA LOGO ESPECIFICA**/
-        #logo{
-            /**border: 5px solid green;**/
-            width:500px;
-            margin:100px auto 0 auto;
+
+        h4 {
+            /** CAMBIAR FONT
+            // <weight>: Use a value from 100 to 900
+            // <uniquifier>: Use a unique and descriptive class **/
+            color: #fff9e1;
+            font-family: "Boldonse", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+            font-size: 30px;
+            text-align: left;
+            line-height: 0px;
         }
-        a{
-            text-decoration: none;
+
+        h5 {
+            /** CAMBIAR FONT
+            // <weight>: Use a value from 100 to 900
+            // <uniquifier>: Use a unique and descriptive class **/
+            color: #fff9e1;
+            font-family: "Outfit", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 200;
+            font-style: normal;
+            font-size: 16px;
+            text-align: justify;
+            margin: 0;
+        }
+
+        /** LLAMAR A LA CAJITA LOGO ESPECIFICA**/
+        #header {
+            background-color: #202932;
+            border-radius: 10px;
+            padding: 5px;
+
+
+            /**border: 5px solid green; **/
+        }
+
+        #name {
+            margin-left: 08%;
+            margin-top: 08%;
+            margin-bottom: 08%;
+            margin-right: 02%;
+            display: grid;
+            grid-template-columns: 0fr 2fr;
+            column-gap: 40px;
+            align-items: center;
+            grid-template-rows: 400px;
+            /*border: 5px solid green;*/
+            overflow: hidden;
+        }
+
+        #button {
+            background-color: #f18e7b;
+            border-radius: 10px;
+            height: 50px;
+            width: 50px;
+            align-items: center;
+
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 1000;
+        }
+
+        /* external css: flickity.css */
+
+        * {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .gallery {
+            background: #fff9e1;
+        }
+
+        .gallery-cell {
+            width: 80%;
+            height: 600px;
+            margin-right: 10px;
+            padding: 02%;
+
+            background: #202932;
+            border-radius: 10px;
+
+            display: grid;
+            grid-template-columns: auto auto;
+            column-gap: 40px;
+            grid-template-rows: 1fr 2fr 1fr;
+            align-items: top;
+
+            grid-template-areas:
+                "a a"
+                "c d"
+                "e e";
+            /* e spans both columns */
+        }
+
+        /* Style for dots */
+        .flickity-page-dots {
+            bottom: -30px;
+            /* Adjust this to position dots */
+        }
+
+        .flickity-page-dots .dot {
+            width: 12px;
+            height: 12px;
+            opacity: 1;
+            background: #474553;
+        }
+
+        .flickity-page-dots .dot.is-selected {
+            background: rgb(210, 71, 71);
+            /* Match your cell color */
+        }
+
+        .timeline-container {
+            position: absolute;
+            margin-left: 01.5%;
+            top: 150px;
+            bottom: 10px;
+            height: 2700px;
+            overflow: visible;
+            align-items: center;
+        }
+
+        .line {
+            top: 0;
+            /* Start from top */
+            bottom: 0;
+            /* Extend to bottom */
+            border-left: 5px solid #202932;
+            width: 4px;
+
+            position: absolute;
+
+            border-radius: 50px;
+
+            /*Specify a stack order in case you're using a different order for other elements*/
+            z-index: 2;
+            cursor: pointer;
+            /* Add a pointer on hover */
+        }
+
+        .timeline-dots {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 550px;
+            /* Space between dots */
+            padding: 300px 0;
+        }
+
+        .dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .image-hover {
+            width: 400px;
+            height: 400px;
+            /* Specify the width */
+            background-image: url('img/Bety.png');
+            /* Initial background image */
+            background-size: cover;
+            /* Cover the entire area of the element */
+            transition: background-image 0.5s ease-in-out;
+            /* Smooth transition */
+        }
+
+        .image-hover:hover {
+
+            background-image: url('img/BetyColor.png');
+            /* Change on hover */
+        }
+
+        .media-pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .media-text {
+            padding: 15px;
+        }
+
+        .media-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+            .media-pair {
+                grid-template-columns: 1fr;
+            }
+
+            .media-text {
+                margin-right: 0;
+                padding: 0;
+            }
+
+            .media-content {
+                margin-top: 20px;
+            }
+        }
+
+        /* Maintain your existing design language */
+        .blog-section {
+            background-color: #fff9e1;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(32, 41, 50, 0.1);
+            margin-bottom: 60px;
+        }
+
+        .blog-section h4 {
+            font-family: "Boldonse", sans-serif;
+            font-size: 30px;
+            color: #202932;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #f18e7b;
+            border-radius: 5px;
+            padding-bottom: 30px;
+            display: inline-block;
         }
     </style>
 
 </head>
-<body>
-    <div id="logo">
-        <a
-            href="https://portafoliobety.my.canva.site/inicio"
-            target="_blank">
-    <img src="img/logoBety.png">
-    <h1>WELCOME</h1>
 
-</a>
+<body><!-- TODO EL CONTENID VISIBLE DE LA PAG WEB VA AQUI EN BODY-->
+    <div id="button">
+        <a href="#header" style="text-decoration:none">
+            <img src="img/arrow.png" width="50px" style="
+            margin: auto;
+            padding: 10px; "> </a>
+    </div>
+    <div class="timeline-container">
+        <div class="line">
+            <div class="timeline-dots">
+                <div class="dot" style="
+                background-color: #f18e7b;
+                "></div>
+                <div class="dot" style="
+                background-color: #4ba3db;
+                "></div>
+                <div class="dot" style="
+                background-color: #b9b83a;
+                "></div>
+                <div class="dot" style="
+                background-color: #e0a632;
+                "></div>
 
-</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="header" style="
+        display: grid;
+            align-items: center;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            column-gap: 5px;
+            margin: 0 auto 0 auto;
+            ">
+
+        <a href="#home" style="text-decoration:none">
+            <h3>HOME</h3>
+        </a>
+
+        <a href="#about" style="text-decoration:none">
+            <h3>ABOUT ME</h3>
+        </a>
+
+        <img src="img/LogoWhite.png" width="100px" style="
+            margin: auto;
+            padding: 10px; ">
+
+        <a href="#projects" style="text-decoration:none">
+            <h3>PROJECTS</h3>
+        </a>
+        <a href="#contact" style="text-decoration:none">
+            <h3>CONTACT ME</h3>
+        </a>
+    </div>
+
+    <div id="home">
+        <div id="name" style="
+        margin-right: 0;">
+            <h1>
+                BETY <br>
+                VEGA
+                <div>
+                    <h3 style="
+                font-size: 20px;
+                color: #202932;
+                line-height: 0%;
+                padding-left: 05%;
+                text-align: left;
+                ">
+                        Technical Artist | Game Developer
+                    </h3>
+                </div>
+            </h1>
+            <img src="img/homeImg.png" height="380 px">
+        </div>
+    </div>
+
+
+
+    <div id="about">
+        <div id="header" style="
+        margin-left: 05%;
+        margin-top: 08%;
+        margin-bottom: 08%;
+        margin-right: 00%;
+        height: auto;
+    ">
+            <div id="name" style="
+        margin:02%;
+        grid-template-columns:1fr 0fr;
+        column-gap: 0;">
+                <div style="
+                padding: 03%;">
+                    <h2 style="
+                color: #fff9e1;
+                margin-top: auto;
+                margin-bottom: auto;">
+                        About Me
+                    </h2>
+                    <h3 style="
+                text-align:justify ;
+                font-weight: 200;">
+                        Hi! My name is Bety, I’m 21 years old and since I have always been passionate about art and
+                        science.
+                        So, when I studied Digital Art at Tecnológico de Monterrey, I decided to merge both.<br><br>
+                        In my work, I aim to combine art, technology, and innovation to create interactive
+                        experiences that are not only visually engaging and memorable, but that also promote culture and
+                        knowledge. <br><br>
+                        I believe that creativity can be a powerful tool for learning, and I’m excited
+                        to keep exploring how digital art can bring complex ideas to life.
+                    </h3>
+                </div>
+                <div class="image-hover">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+    <div id="projects">
+        <div id="name" style="
+        grid-template-columns:1fr;
+        grid-template-rows: auto;">
+            <h2 style="
+        margin-top: auto;
+        margin-bottom: auto;">
+                Projects
+            </h2>
+
+            <!--<p><code>wrapAround: true</code></p> -->
+
+            <!-- Flickity HTML init -->
+            <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }' style="
+        margin-bottom: 50px;
+        margin-top: 20px;">
+                <div class="gallery-cell">
+                    <div class="cell-item" style="grid-area: a;">
+                        <h4>
+                            UNAM Triángulo Sagrado
+                        </h4>
+                    </div>
+
+                    <div class="cell-item" style="grid-area: c;">
+                        <h5>
+                            Web visualization tool about the geological processes in a región of Querétaro
+                            (Cerro el Frontón, el Zamorano, and Peña de Bernal), developed for the Universidad
+                            Autónoma de México (Autonomous University of Mexico). <br><br>
+                            Responsabilities:
+
+                        </h5>
+                        <h5 style="
+                    text-align: left;
+                    padding-left: 05%;">
+                            o Programming and full integration<br>
+                            o Creation of custom materials<br>
+                            o Shader-based real-time effects: flowing water, lava explosions, and dynamic texture
+                            transitions<br>
+                            o UI design and implementation<br>
+                        </h5>
+                    </div>
+
+                    <div class="cell-item" style="grid-area: d;">
+                        <iframe width="480" height="270"
+                            src="https://www.youtube.com/embed/vZSVzehNj4A?si=k5eW8_rngfw7oerV" frameborder="0"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <div class="cell-item" style="grid-area: e;
+                display: flex;
+                justify-content: center; /* Horizontal centering */
+                height:150px">
+                        <video autoplay>
+                            <source src="img/2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+
+
+                <div class="gallery-cell">
+                    <div class="cell-item" style="grid-area: a;">
+                        <h4>Humberto</h4>
+                    </div>
+
+                    <div class="cell-item" style="grid-area: c;">
+                        <h5>
+                            Stylized 3D digital sculpture inspired by medieval scribes.
+                            Retopology of the 3D, UVs, and baking using low poly and high poly models.<br><br>
+                            Responsabilities:
+
+                        </h5>
+                        <h5 style="
+                    text-align: left;
+                    padding-left: 05%;">
+                            o Concept art<br>
+                            o Sculpting and modelling<br>
+                            o Retopology, UV mapping, and baking (low poly and high poly workflow)<br>
+                            o Creation of custom shaders: emissive effects, subsurface scattering, animated vein masks,
+                            and
+                            smoke sprite animations<br>
+                        </h5>
+                    </div>
+
+                    <div class="cell-item" style="grid-area: d;">
+                        <iframe width="480" height="270"
+                            src="https://www.youtube.com/embed/IxMfvNmJVaU?si=Ku6RuURFp0E_Nss-" frameborder="0"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <div class="cell-item" style="grid-area: e;
+                display: flex;
+                justify-content: center; /* Horizontal centering */
+                height:150px">
+                        <img src="img/homeImg.png" alt="Centered Image">
+                    </div>
+                </div>
+
+
+                <div class="gallery-cell">
+                    <div class="cell-item" style="grid-area: a;">
+                        <h4>AR Books IJB</h4>
+                    </div>
+
+                    <div class="cell-item" style="grid-area: c;">
+                        <h5>
+                            Augmented reality adaptation of 2 children’s books for the “Crazy Machines”
+                            exhibition at the Internationale Jugendbibliothek IJB of Germany (International Youth
+                            Library).<br><br>
+                            Responsabilities:
+
+                        </h5>
+                        <h5 style="
+                    text-align: left;
+                    padding-left: 05%;">
+                            o Programming and integration<br>
+                            o Shader development: custom clip shader enabling transparency cuts along any axis, with
+                            position fixed in AR space<br>
+                            o Optimization for AR experience<br>
+                            o 2D animation<br>
+                            o UI<br>
+
+                        </h5>
+                    </div>
+
+                    <div class="cell-item" style="grid-area: d;">
+                        <iframe width="480" height="270"
+                            src="https://www.youtube.com/embed/IxMfvNmJVaU?si=Ku6RuURFp0E_Nss-" frameborder="0"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <div class="cell-item" style="grid-area: e;
+                display: flex;
+                justify-content: center; /* Horizontal centering */
+                height:150px">
+                        <img src="img/homeImg.png" alt="Centered Image">
+                    </div>
+                </div>
+
+
+                <div class="gallery-cell">
+                    <div class="cell-item" style="grid-area: a;">
+                        <h4>The Cowboy Cockroach </h4>
+                    </div>
+
+                    <div class="cell-item" style="grid-area: c;">
+                        <h5>
+                            Augmented reality videogame about a cockroach trapped inside a TV, played with a cardboard
+                            box.
+                            <br><br>
+                            Responsabilities:
+
+                        </h5>
+                        <h5 style="
+                    text-align: left;
+                    padding-left: 05%;">
+                            o Integration and programming<br>
+                            o Rigging and animation of the main character using mocap and animation transfer<br>
+                            o Creation of a reactive shader system for character damage and power-ups<br>
+                            o UI<br>
+
+                        </h5>
+                    </div>
+
+                    <div class="cell-item" style="grid-area: d;">
+                        <iframe width="480" height="270"
+                            src="https://www.youtube.com/embed/IxMfvNmJVaU?si=Ku6RuURFp0E_Nss-" frameborder="0"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <div class="cell-item" style="grid-area: e;
+                display: flex;
+                justify-content: center; /* Horizontal centering */
+                height:150px">
+                        <img src="img/homeImg.png" alt="Centered Image">
+                    </div>
+                </div>
+
+
+
+                <div class="gallery-cell">
+                    <div class="cell-item" style="grid-area: a;">
+                        <h4>The Gallo VS the nightmares </h4>
+                    </div>
+
+                    <div class="cell-item" style="grid-area: c;">
+                        <h5>
+                            3D videogame for pc about Mexican toys that fight against famous legends of Mexican
+                            culture.<br><br>
+                            Responsabilities:
+
+                        </h5>
+                        <h5 style="
+                    text-align: left;
+                    padding-left: 05%;">
+                            o Low-poly modeling, rigging, and animation of characters<br>
+                            o Creation of trim sheets for efficient and stylized environment asset texturing<br>
+                            o UI<br>
+                        </h5>
+                    </div>
+
+                    <div class="cell-item" style="grid-area: d;">
+                        <iframe width="480" height="270"
+                            src="https://www.youtube.com/embed/Opc_3tA-OKU?si=rz4uAgPiFv5S4dZy" frameborder="0"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <div class="cell-item" style="grid-area: e;
+                display: flex;
+                justify-content: center; /* Horizontal centering */
+                height:150px">
+                        <img src="img/homeImg.png" alt="Centered Image">
+                    </div>
+                </div>
+            </div>
+            <div id="blog" style="margin-top: 20px;">
+                <div id="name" style="grid-template-columns:1fr; grid-template-rows: auto; margin:0px;">
+                    <h2 style="font-size:40px;">Restore it Yourself Studio </h2>
+                            <h5 style="color: #202932; text-align: center;">Put yourself in the shoes of a restorer while you clean, repair, and varnish famous paintings of the western world! </h5>
+
+                    <!-- YouTube Video -->
+                    <div style="margin: 10px 0; display: flex; justify-content: center;">
+                        <iframe width="800" height="450" src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                            frameborder="0" allowfullscreen></iframe>
+                    </div>
+
+                    <!-- First Section -->
+                    <div class="blog-section" style="margin-bottom: 60px;">
+                        <h4 style="color: #202932; margin-bottom: 30px;">Creating the Painting</h4>
+
+                        <!-- a) text and image side by side -->
+                        <div class="media-pair">
+                            <div class="media-text">
+                                <h5 style="color: #202932; margin-right: 30px;">Text description for creating the
+                                    painting
+                                    part a. This would explain the process shown in the accompanying image. The text
+                                    wraps
+                                    nicely next to the visual content.</h5>
+                            </div>
+                            <div class="media-content">
+                                <img src="img/blog1a.jpg" alt="Creating the painting step a"
+                                    style="max-width: 100%; height: auto; border-radius: 8px;">
+                            </div>
+                        </div>
+
+                        <!-- b) text and 2 videos -->
+                        <div class="media-pair">
+                            <div class="media-text">
+                                <h5 style="color: #202932; margin-right: 30px;">Text description for creating the
+                                    painting
+                                    part b. This would explain the process shown in the two accompanying videos. The
+                                    text
+                                    remains readable while the videos play.</h5>
+                            </div>
+                            <div class="media-content"
+                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                <video controls style="width: 100%; border-radius: 8px;">
+                                    <source src="img/blog1b1.mp4" type="video/mp4">
+                                </video>
+                                <video controls style="width: 100%; border-radius: 8px;">
+                                    <source src="img/blog1b2.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+
+                        <!-- c) text and image -->
+                        <div class="media-pair">
+                            <div class="media-text">
+                                <h5 style="color: #202932; margin-right: 30px;">Text description for creating the
+                                    painting
+                                    part c. This would explain the next phase of the process shown in the image.</h5>
+                            </div>
+                            <div class="media-content">
+                                <img src="img/blog1c.jpg" alt="Creating the painting step c"
+                                    style="max-width: 100%; height: auto; border-radius: 8px;">
+                            </div>
+                        </div>
+
+                        <!-- Continue with remaining sections following the same pattern... -->
+                    </div>
+
+                    <!-- Second Section -->
+                    <div class="blog-section" style="margin-bottom: 60px;">
+                        <h4 style="color: #202932; margin-bottom: 30px;">Cracking the Painting</h4>
+
+                        <!-- a) text and image side by side -->
+                        <div class="media-pair">
+                            <div class="media-text">
+                                <h5 style="color: #202932; margin-right: 30px;">Text description for cracking the
+                                    painting
+                                    part a. This explains the deliberate cracking process we used to create authentic
+                                    aging
+                                    effects.</h5>
+                            </div>
+                            <div class="media-content">
+                                <img src="img/blog2a.jpg" alt="Cracking the painting step a"
+                                    style="max-width: 100%; height: auto; border-radius: 8px;">
+                            </div>
+                        </div>
+
+                        <!-- b) text and image -->
+                        <div class="media-pair">
+                            <div class="media-text">
+                                <h5 style="color: #202932; margin-right: 30px;">Text description for cracking the
+                                    painting
+                                    part b. Details about the materials used to create controlled cracking patterns.
+                                </h5>
+                            </div>
+                            <div class="media-content">
+                                <img src="img/blog2b.jpg" alt="Cracking the painting step b"
+                                    style="max-width: 100%; height: auto; border-radius: 8px;">
+                            </div>
+                        </div>
+
+                        <!-- c) text, image and video -->
+                        <div class="media-pair">
+                            <div class="media-text">
+                                <h5 style="color: #202932; margin-right: 30px;">Text description for cracking the
+                                    painting
+                                    part c. Showing both the static result and the process video of the cracking
+                                    technique.
+                                </h5>
+                            </div>
+                            <div class="media-content"
+                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                <img src="img/blog2c.jpg" alt="Cracking result"
+                                    style="width: 100%; border-radius: 8px;">
+                                <video controls style="width: 100%; border-radius: 8px;">
+                                    <source src="img/blog2c-vid.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="contact">
+        <div id="name" style="
+        grid-template-columns: 1fr 2fr;
+            column-gap: 40px;
+            grid-template-rows:auto auto auto;
+            align-items: center;
+            text-align: center;
+
+            grid-template-areas:
+                'a a'
+                'c d'">
+            <div style="grid-area: a;">
+                <h2 style="
+            margin-top: auto;
+            margin-bottom: auto;">
+                    Contact me
+                </h2>
+            </div>
+            <div style="grid-area: c;">
+                <img src="img/LogoGif.gif" alt="GifLogo" height="400" />
+            </div>
+
+            <div style="grid-area: d;">
+                <div id="header" style="margin:10px 0 10px 0;">
+                    <a href="mailto:anabeatrizvegaglz03@gmail.com?subject=Hello&body=Hi,%20I%20came%20from%20your%20webpage,"
+                        style="text-decoration:none !important; text-decoration:none; color: #fff9e1; " target="_blank">
+                        <div style="
+                padding: 01%;">
+                            <h3 style="
+                text-align:justify ;
+                font-weight: 200;">
+                                anabeatrizvegaglz03@gmail.com
+                            </h3>
+                        </div>
+                </div>
+                <div id="header" style="margin:10px 0 10px 0;">
+                    <a href="https://www.linkedin.com/in/betyvegatechart"
+                        style="text-decoration:none !important; text-decoration:none; color: #fff9e1; " target="_blank">
+
+                        <div style="
+                padding: 01%;">
+                            <h3 style="
+                text-align:justify ;
+                font-weight: 200;">
+                                https://www.linkedin.com/in/betyvegatechart
+                            </h3>
+                        </div>
+                </div>
+                <div id="header" style="margin:10px 0 10px 0;">
+                    <a href="https://ig.me/m/bety_vega_"
+                        style="text-decoration:none !important; text-decoration:none; color: #fff9e1; " target="_blank">
+                        <div style="
+                padding: 01%;">
+                            <h3 style="
+                text-align:justify ;
+                font-weight: 200;">
+                                @bety_vega_
+                            </h3>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Include jQuery (if needed) and Flickity JS at the end of the body -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script>
+        // external js: flickity.pkgd.js
+        // Any additional JavaScript initialization would go here
+    </script>
 </body>
+
 </html>
