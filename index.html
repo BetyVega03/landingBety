@@ -241,47 +241,38 @@
         }
 
         .media-pair {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    align-items: stretch; /* Changed from 'center' to 'stretch' */
-    margin-bottom: 50px;
-    min-height: 200px; /* Optional: set minimum height */
-}
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+            margin-bottom: 50px;
+        }
 
-.media-text {
-    padding: 15px;
-    display: flex;
-    align-items: center; /* Vertically center text */
-}
+        .media-text {
+            padding: 15px;
+        }
 
-.media-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    background-color: #f8f8f8; /* Optional: subtle background for code images */
-    border-radius: 8px;
-    padding: 10px;
-}
+        .media-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
 
-/* Keep your existing responsive adjustments */
-@media (max-width: 900px) {
-    .media-pair {
-        grid-template-columns: 1fr;
-    }
-    
-    .media-text {
-        margin-right: 0;
-        padding: 0;
-    }
-    
-    .media-content {
-        margin-top: 20px;
-        height: auto;
-        min-height: 200px;
-    }
-}
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+            .media-pair {
+                grid-template-columns: 1fr;
+            }
+
+            .media-text {
+                margin-right: 0;
+                padding: 0;
+            }
+
+            .media-content {
+                margin-top: 20px;
+            }
+        }
 
         /* Maintain your existing design language */
         .blog-section {
@@ -670,18 +661,18 @@
                         <h4 style="color: #202932; margin-bottom: 30px;">Creating the Painting</h4>
 
                         <!-- a) text and image side by side -->
-     <div class="media-pair">
-    <div class="media-text">
-        <h5 style="color: #202932; margin-right: 30px;">
-            I designed a tool to create the paintings based on an image input. The mesh's size and UVs adjust to the proportions of the original image.
-            To create a mesh through code, vertex, triangles, and UVs are needed. First, I got the aspect ratio of the painting.
-        </h5>
-    </div>
-    <div class="media-content" style="height: 100%; display: flex; align-items: center;">
-        <img src="img/code_ratio.png" 
-             style="max-height: 100%; width: auto; border-radius: 8px; object-fit: contain;">
-    </div>
-</div>
+                        <div class="media-pair">
+                            <div class="media-text">
+                                <h5 style="color: #202932; margin-right: 30px;">I designed a tool to create the paintings based on an image input. The mesh’s size and UVs adjust to the proportions of the original image.
+To create a mesh through code, vertex, triangles, and UVs are needed. First, I got the aspect ratio of the painting.
+</h5>
+                            </div>
+                            <div class="media-content">
+                                <img src="img/code_ratio.png" 
+                                    style=" width:033%; height: auto; border-radius: 8px;">
+                            </div>
+                        </div>
+
                         <!-- b) text and 2 videos -->
                         <div class="media-pair">
                             <div class="media-text">
@@ -692,11 +683,10 @@ Then, I created the triangles in the correct order, so that their normal would f
                             <div class="media-content"
                                 style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                                 <video controls style="width: 100%; border-radius: 8px;">
-                                    <source src="img/blog1b1.mp4" type="video/mp4">
+                                    <source src="img/OrdenVertex_02.mp4" type="video/mp4">
                                 </video>
-                                <video controls style="width: 100%; border-radius: 8px;">
-                                    <source src="img/blog1b2.mp4" type="video/mp4">
-                                </video>
+                                <img src="img/Triangles.png" 
+                                    style=" width:033%; height: auto; border-radius: 8px;">
                             </div>
                         </div>
 
