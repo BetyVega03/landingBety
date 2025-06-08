@@ -1,20 +1,14 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Bety Vega Portafolio</title>
     <link rel="icon" type="image/png" size="32x32" href="img/miniLogo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Outfit:wght@100..900&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-
     <style>
         html {
             height: 100%;
@@ -22,93 +16,87 @@
             scroll-behavior: smooth;
         }
 
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Outfit", sans-serif;
+            color: #202932;
+        }
+
         h1 {
-            /**
-            // <weight>: Use a value from 100 to 900
-            // <uniquifier>: Use a unique and descriptive class name.**/
             color: #202932;
             font-family: "Boldonse", sans-serif;
             font-size: 120px;
             font-weight: 900;
             font-style: normal;
             line-height: 180px;
+            margin: 0;
         }
 
         h2 {
-            /** CAMBIAR FONT
-            // <weight>: Use a value from 100 to 900
-            // <uniquifier>: Use a unique and descriptive class **/
             color: #202932;
             font-family: "Boldonse", sans-serif;
-            font-optical-sizing: auto;
             font-weight: 400;
             font-style: normal;
             font-size: 50px;
             text-align: left;
+            margin: 0 0 30px 0;
         }
 
         h3 {
-            /** CAMBIAR FONT
-            // <weight>: Use a value from 100 to 900
-            // <uniquifier>: Use a unique and descriptive class **/
             color: #fff9e1;
             font-family: "Outfit", sans-serif;
-            font-optical-sizing: auto;
             font-weight: 400;
             font-style: normal;
             font-size: 20px;
             text-align: center;
+            margin: 0;
         }
 
         h4 {
-            /** CAMBIAR FONT
-            // <weight>: Use a value from 100 to 900
-            // <uniquifier>: Use a unique and descriptive class **/
             color: #fff9e1;
             font-family: "Boldonse", sans-serif;
-            font-optical-sizing: auto;
             font-weight: 300;
             font-style: normal;
             font-size: 30px;
             text-align: left;
-            line-height: 0px;
+            line-height: 1.2;
+            margin: 10px 0 0 0;
         }
 
         h5 {
-            /** CAMBIAR FONT
-            // <weight>: Use a value from 100 to 900
-            // <uniquifier>: Use a unique and descriptive class **/
             color: #fff9e1;
             font-family: "Outfit", sans-serif;
-            font-optical-sizing: auto;
             font-weight: 200;
             font-style: normal;
             font-size: 16px;
             text-align: justify;
             margin: 0;
+            line-height: 1.6;
         }
 
-        /** LLAMAR A LA CAJITA LOGO ESPECIFICA**/
         #header {
             background-color: #202932;
             border-radius: 10px;
             padding: 5px;
-
-
-            /**border: 5px solid green; **/
+            top: 10px;
+            z-index: 1000;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            align-items: center;
+            margin: 0.5%;
         }
 
         #name {
-            margin-left: 08%;
-            margin-top: 08%;
-            margin-bottom: 08%;
-            margin-right: 02%;
+            margin-left: 8%;
+            margin-top: 8%;
+            margin-bottom: 8%;
+            margin-right: 2%;
             display: grid;
             grid-template-columns: 0fr 2fr;
             column-gap: 40px;
             align-items: center;
             grid-template-rows: 400px;
-            /*border: 5px solid green;*/
             overflow: hidden;
         }
 
@@ -117,53 +105,42 @@
             border-radius: 10px;
             height: 50px;
             width: 50px;
-            align-items: center;
-
             position: fixed;
             right: 20px;
             bottom: 20px;
             z-index: 1000;
-        }
-
-        /* external css: flickity.css */
-
-        * {
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .gallery {
             background: #fff9e1;
+            margin-bottom: 50px;
+            margin-top: 20px;
         }
 
         .gallery-cell {
             width: 80%;
             height: 600px;
             margin-right: 10px;
-            padding: 02%;
-
+            padding: 2%;
             background: #202932;
             border-radius: 10px;
-
             display: grid;
             grid-template-columns: auto auto;
             column-gap: 40px;
-            grid-template-rows: 1fr 2fr 1fr;
-            align-items: top;
+            grid-template-rows:  0fr 2fr 1fr;
+            align-items: center;
             overflow: hidden;
-
-
             grid-template-areas:
                 "a a"
                 "c d"
                 "e e";
-            /* e spans both columns */
         }
 
-        /* Style for dots */
         .flickity-page-dots {
             bottom: -30px;
-            /* Adjust this to position dots */
         }
 
         .flickity-page-dots .dot {
@@ -174,36 +151,27 @@
         }
 
         .flickity-page-dots .dot.is-selected {
-            background: rgb(210, 71, 71);
-            /* Match your cell color */
+            background: #f18e7b;
         }
 
         .timeline-container {
             position: absolute;
-            margin-left: 01.5%;
+            margin-left: 1.5%;
             top: 150px;
             bottom: 10px;
-            height: 2700px;
+            height: 6200px;
             overflow: visible;
-            align-items: center;
         }
 
         .line {
             top: 0;
-            /* Start from top */
             bottom: 0;
-            /* Extend to bottom */
-            border-left: 5px solid #202932;
-            width: 4px;
-
-            position: absolute;
-
-            border-radius: 50px;
-
-            /*Specify a stack order in case you're using a different order for other elements*/
-            z-index: 2;
-            cursor: pointer;
-            /* Add a pointer on hover */
+            border: 1px solid #202932;
+             width: 4px;
+             position: absolute;
+             border-radius: 40px;
+             z-index: 2;
+            background-color: #202932;
         }
 
         .timeline-dots {
@@ -212,7 +180,6 @@
             flex-direction: column;
             align-items: center;
             gap: 550px;
-            /* Space between dots */
             padding: 300px 0;
         }
 
@@ -227,27 +194,23 @@
         .image-hover {
             width: 400px;
             height: 400px;
-            /* Specify the width */
             background-image: url('img/Bety.png');
-            /* Initial background image */
             background-size: cover;
-            /* Cover the entire area of the element */
             transition: background-image 0.5s ease-in-out;
-            /* Smooth transition */
+           justify-self: center;
         }
 
         .image-hover:hover {
-
             background-image: url('img/BetyColor.png');
-            /* Change on hover */
+            
         }
 
         .media-pair {
             display: grid;
-            grid-template-columns: 1fr 3fr;
+            grid-template-columns: 1fr 1fr;
             gap: 30px;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 40px;
         }
 
         .media-text {
@@ -258,204 +221,238 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
-            align-items: center;
         }
 
-        /* Responsive adjustments */
-        @media (max-width: 900px) {
-            .media-pair {
-                grid-template-columns: 1fr;
-            }
-
-            .media-text {
-                margin-right: 0;
-                padding: 0;
-            }
-
-            .media-content {
-                margin-top: 20px;
-            }
-        }
-
-        /* Maintain your existing design language */
         .blog-section {
             background-color: #fff9e1;
             padding: 40px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(32, 41, 50, 0.1);
-            margin-bottom: 60px;
+            margin-bottom: 10px;
         }
 
         .blog-section h4 {
-            font-family: "Boldonse", sans-serif;
-            font-size: 30px;
             color: #202932;
-            margin-bottom: 30px;
             border-bottom: 2px solid #f18e7b;
-            border-radius: 5px;
-            padding-bottom: 30px;
+            padding-bottom: 10px;
             display: inline-block;
         }
-    </style>
 
+        img, video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+
+        video {
+            background-color: #202932;
+        }
+
+        iframe {
+            border-radius: 8px;
+            border: none;
+        }
+
+        @media (max-width: 1200px) {
+            h1 {
+                font-size: 80px;
+                line-height: 120px;
+            }
+            
+            #name {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .media-pair {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-cell {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto;
+                height: auto;
+                grid-template-areas:
+                    "a"
+                    "c"
+                    "d"
+                    "e";
+            }
+            
+            #header {
+                grid-template-columns: 1fr;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 60px;
+                line-height: 80px;
+            }
+            
+            h2 {
+                font-size: 36px;
+            }
+            
+            .blog-section {
+                padding: 20px;
+            }
+        }
+
+         /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .lightbox-content img,
+        .lightbox-content video {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .lightbox-nav button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .clickable-media {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .clickable-media:hover {
+            transform: scale(1.02);
+        }
+
+        
+    </style>
 </head>
 
-<body><!-- TODO EL CONTENID VISIBLE DE LA PAG WEB VA AQUI EN BODY-->
+<body>
     <div id="button">
         <a href="#header" style="text-decoration:none">
-            <img src="img/arrow.png" width="50px" style="
-            margin: auto;
-            padding: 10px; "> </a>
+            <img src="img/arrow.png" width="30" alt="Back to top">
+        </a>
     </div>
+    
     <div class="timeline-container">
         <div class="line">
             <div class="timeline-dots">
-                <div class="dot" style="
-                background-color: #f18e7b;
-                "></div>
-                <div class="dot" style="
-                background-color: #4ba3db;
-                "></div>
-                <div class="dot" style="
-                background-color: #b9b83a;
-                "></div>
-                <div class="dot" style="
-                background-color: #e0a632;
-                "></div>
-
+                <div class="dot" style="background-color: #f18e7b;"></div>
+                <div class="dot" style="background-color: #4ba3db;"></div>
+                <div class="dot" style="background-color: #b9b83a;"></div>
+                <div class="dot" style="background-color: #e0a632;"></div>
             </div>
         </div>
     </div>
 
-    <div id="header" style="
-        display: grid;
-            align-items: center;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-            column-gap: 5px;
-            margin: 0 auto 0 auto;
-            ">
-
-        <a href="#home" style="text-decoration:none">
-            <h3>HOME</h3>
-        </a>
-
-        <a href="#about" style="text-decoration:none">
-            <h3>ABOUT ME</h3>
-        </a>
-
-        <img src="img/LogoWhite.png" width="100px" style="
-            margin: auto;
-            padding: 10px; ">
-
-        <a href="#projects" style="text-decoration:none">
-            <h3>PROJECTS</h3>
-        </a>
-        <a href="#contact" style="text-decoration:none">
-            <h3>CONTACT ME</h3>
-        </a>
+    <div id="header" style="align-items: center;">
+        <a href="#home" style="text-decoration:none"><h3>HOME</h3></a>
+        <a href="#about" style="text-decoration:none"><h3>ABOUT ME</h3></a>
+        <div style="text-align: center;">
+         <img src="img/LogoWhite.png" width="100" alt="Bety Vega Logo">
+        </div>
+        <a href="#projects" style="text-decoration:none"><h3>PROJECTS</h3></a>
+        <a href="#contact" style="text-decoration:none"><h3>CONTACT ME</h3></a>
     </div>
 
     <div id="home">
-        <div id="name" style="
-        margin-right: 0;">
+        <div id="name">
             <h1>
-                BETY <br>
-                VEGA
+                BETY <br>VEGA
                 <div>
-                    <h3 style="
-                font-size: 20px;
-                color: #202932;
-                line-height: 0%;
-                padding-left: 05%;
-                text-align: left;
-                ">
+                    <h3 style="font-size: 20px; color: #202932; line-height: 0%; padding-left: 5%; padding-top: 10px; text-align: left;">
                         Technical Artist | Game Developer
                     </h3>
                 </div>
             </h1>
-            <img src="img/homeImg.png" height="380 px">
+            <img src="img/homeImg.png" style= "height: 100%; max-width: none;"alt="Bety Vega">
         </div>
     </div>
 
-
-
     <div id="about">
-        <div id="header" style="
-        margin-left: 05%;
-        margin-top: 08%;
-        margin-bottom: 08%;
-        margin-right: 00%;
-        height: auto;
-    ">
-            <div id="name" style="
-        margin:02%;
-        grid-template-columns:1fr 0fr;
-        column-gap: 0;">
-                <div style="
-                padding: 03%;">
-                    <h2 style="
-                color: #fff9e1;
-                margin-top: auto;
-                margin-bottom: auto;">
-                        About Me
-                    </h2>
-                    <h3 style="
-                text-align:justify ;
-                font-weight: 200;">
-                        Hi! My name is Bety, I’m 21 years old and since I have always been passionate about art and
-                        science.
+        <div id="header" style="margin-left: 5%; margin-top: 8%; margin-bottom: 8%; margin-right: 0.5%; height: auto; grid-template-columns: 2fr 1fr;">
+            <div id="name" style="margin: 2%; grid-template-rows: 1fr 0fr; grid-template-columns: none;">
+                <div style="padding: 3%;">
+                    <h2 style="color: #fff9e1;">About Me</h2>
+
+                    <h3 style="text-align:justify; font-weight: 200;">
+                        Hi! My name is Bety, I'm 21 years old and since I have always been passionate about art and science.
                         So, when I studied Digital Art at Tecnológico de Monterrey, I decided to merge both.<br><br>
                         In my work, I aim to combine art, technology, and innovation to create interactive
                         experiences that are not only visually engaging and memorable, but that also promote culture and
                         knowledge. <br><br>
-                        I believe that creativity can be a powerful tool for learning, and I’m excited
+                        I believe that creativity can be a powerful tool for learning, and I'm excited
                         to keep exploring how digital art can bring complex ideas to life.
                     </h3>
                 </div>
-                <div class="image-hover">
-
-                </div>
             </div>
+            
+                <div class="image-hover" ></div>
 
         </div>
     </div>
-    </div>
-
 
     <div id="projects">
-        <div id="name" style="
-        grid-template-columns:1fr;
-        grid-template-rows: auto;">
-            <h2 style="
-        margin-top: auto;
-        margin-bottom: auto;">
-                Projects
-            </h2>
+        <div id="name" style="grid-template-columns:1fr; grid-template-rows: auto;">
+            <h2>Projects</h2>
 
-            <!--<p><code>wrapAround: true</code></p> -->
-
-            <!-- Flickity HTML init -->
-            <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }' style="
-        margin-bottom: 50px;
-        margin-top: 20px;">
+            <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+                <!-- Project 1 -->
                 <div class="gallery-cell">
                     <div class="cell-item" style="grid-area: a;">
-                        <h4>
-                            UNAM Triángulo Sagrado
-                        </h4>
+                        <h4>UNAM Triángulo Sagrado</h4>
                     </div>
-
                     <div class="cell-item" style="grid-area: c;">
                         <h5>
                             Web visualization tool about the geological processes in a región of Querétaro
                             (Cerro el Frontón, el Zamorano, and Peña de Bernal), developed for the Universidad
                             Autónoma de México (Autonomous University of Mexico). <br><br>
                             Responsabilities:
-
                         </h5>
-                        <h5 style="
-                    text-align: left;
-                    padding-left: 05%;">
+                        <h5 style="text-align: left; padding-left: 5%;">
                             o Programming and full integration<br>
                             o Creation of custom materials<br>
                             o Shader-based real-time effects: flowing water, lava explosions, and dynamic texture
@@ -463,228 +460,165 @@
                             o UI design and implementation<br>
                         </h5>
                     </div>
-
                     <div class="cell-item" style="grid-area: d;">
-                        <iframe width="480" height="270"
-                            src="https://www.youtube.com/embed/vZSVzehNj4A?si=k5eW8_rngfw7oerV" frameborder="0"
-                            allowfullscreen>
-                        </iframe>
+                        <iframe width="480" height="270" src="https://www.youtube.com/embed/vZSVzehNj4A?si=k5eW8_rngfw7oerV" allowfullscreen></iframe>
                     </div>
-
-                    <div class="cell-item" style="grid-area: e;
-                display: flex;
-                justify-content: center; /* Horizontal centering */
-                height:150px">
-                        <video autoplay>
+                    <div class="cell-item" style="grid-area: e; display: flex; justify-content: center; height:150px">
+                        <video autoplay loop muted playsinline>
                             <source src="img/2.mp4" type="video/mp4">
                         </video>
                     </div>
                 </div>
-
-
-
+                
+                <!-- Project 2 -->
                 <div class="gallery-cell">
                     <div class="cell-item" style="grid-area: a;">
                         <h4>Humberto</h4>
                     </div>
-
                     <div class="cell-item" style="grid-area: c;">
                         <h5>
                             Stylized 3D digital sculpture inspired by medieval scribes.
                             Retopology of the 3D, UVs, and baking using low poly and high poly models.<br><br>
                             Responsabilities:
-
                         </h5>
-                        <h5 style="
-                    text-align: left;
-                    padding-left: 05%;">
+                        <h5 style="text-align: left; padding-left: 5%;">
                             o Concept art<br>
                             o Sculpting and modelling<br>
                             o Retopology, UV mapping, and baking (low poly and high poly workflow)<br>
                             o Creation of custom shaders: emissive effects, subsurface scattering, animated vein masks,
-                            and
-                            smoke sprite animations<br>
+                            and smoke sprite animations<br>
                         </h5>
                     </div>
-
                     <div class="cell-item" style="grid-area: d;">
-                        <iframe width="480" height="270"
-                            src="https://www.youtube.com/embed/IxMfvNmJVaU?si=Ku6RuURFp0E_Nss-" frameborder="0"
-                            allowfullscreen>
-                        </iframe>
+                        <iframe width="480" height="270" src="https://www.youtube.com/embed/IxMfvNmJVaU?si=Ku6RuURFp0E_Nss-" allowfullscreen></iframe>
                     </div>
-
-                    <div class="cell-item" style="grid-area: e;
-                display: flex;
-                justify-content: center; /* Horizontal centering */
-                height:150px">
-                        <video autoplay>
+                    <div class="cell-item" style="grid-area: e; display: flex; justify-content: center; height:150px">
+                        <video autoplay loop muted playsinline>
                             <source src="img/3.mp4" type="video/mp4">
                         </video>
                     </div>
                 </div>
-
-
+                
+                <!-- Project 3 -->
                 <div class="gallery-cell">
                     <div class="cell-item" style="grid-area: a;">
                         <h4>AR Books IJB</h4>
                     </div>
-
                     <div class="cell-item" style="grid-area: c;">
                         <h5>
-                            Augmented reality adaptation of 2 children’s books for the “Crazy Machines”
+                            Augmented reality adaptation of 2 children's books for the "Crazy Machines"
                             exhibition at the Internationale Jugendbibliothek IJB of Germany (International Youth
                             Library).<br><br>
                             Responsabilities:
-
                         </h5>
-                        <h5 style="
-                    text-align: left;
-                    padding-left: 05%;">
+                        <h5 style="text-align: left; padding-left: 5%;">
                             o Programming and integration<br>
                             o Shader development: custom clip shader enabling transparency cuts along any axis, with
                             position fixed in AR space<br>
                             o Optimization for AR experience<br>
                             o 2D animation<br>
                             o UI<br>
-
                         </h5>
                     </div>
-
                     <div class="cell-item" style="grid-area: d;">
-                        <iframe width="480" height="270"
-                            src="https://www.youtube.com/embed/IxMfvNmJVaU?si=Ku6RuURFp0E_Nss-" frameborder="0"
-                            allowfullscreen>
-                        </iframe>
+                        <iframe width="480" height="270" src="https://www.youtube.com/embed/stCPj9YcOBE?si=EzhZBYFA5yI76ESY" allowfullscreen></iframe>
                     </div>
-
-                    <div class="cell-item" style="grid-area: e;
-                display: flex;
-                justify-content: center; /* Horizontal centering */
-                height:150px">
-                        <img src="img/homeImg.png" alt="Centered Image">
-                    </div>
-                </div>
-
-
-                <div class="gallery-cell">
-                    <div class="cell-item" style="grid-area: a;">
-                        <h4>The Cowboy Cockroach </h4>
-                    </div>
-
-                    <div class="cell-item" style="grid-area: c;">
-                        <h5>
-                            Augmented reality videogame about a cockroach trapped inside a TV, played with a cardboard
-                            box.
-                            <br><br>
-                            Responsabilities:
-
-                        </h5>
-                        <h5 style="
-                    text-align: left;
-                    padding-left: 05%;">
-                            o Integration and programming<br>
-                            o Rigging and animation of the main character using mocap and animation transfer<br>
-                            o Creation of a reactive shader system for character damage and power-ups<br>
-                            o UI<br>
-
-                        </h5>
-                    </div>
-
-                    <div class="cell-item" style="grid-area: d;">
-                        <iframe width="480" height="270"
-                            src="https://www.youtube.com/embed/IxMfvNmJVaU?si=Ku6RuURFp0E_Nss-" frameborder="0"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-
-                    <div class="cell-item" style="grid-area: e;
-                display: flex;
-                justify-content: center; /* Horizontal centering */
-                height:150px">
-                        <video autoplay>
+                    <div class="cell-item" style="grid-area: e; display: flex; justify-content: center; height:150px">
+                         <video autoplay loop muted playsinline>
                             <source src="img/4.mp4" type="video/mp4">
                         </video>
                     </div>
                 </div>
-
-
-
+                
+                <!-- Project 4 -->
                 <div class="gallery-cell">
                     <div class="cell-item" style="grid-area: a;">
-                        <h4>The Gallo VS the nightmares </h4>
+                        <h4>The Cowboy Cockroach</h4>
                     </div>
-
+                    <div class="cell-item" style="grid-area: c;">
+                        <h5>
+                            Augmented reality videogame about a cockroach trapped inside a TV, played with a cardboard
+                            box.<br><br>
+                            Responsabilities:
+                        </h5>
+                        <h5 style="text-align: left; padding-left: 5%;">
+                            o Integration and programming<br>
+                            o Rigging and animation of the main character using mocap and animation transfer<br>
+                            o Creation of a reactive shader system for character damage and power-ups<br>
+                            o UI<br>
+                        </h5>
+                    </div>
+                    <div class="cell-item" style="grid-area: d;">
+                        <iframe width="480" height="270" src="https://www.youtube.com/embed/IxMfvNmJVaU?si=Ku6RuURFp0E_Nss-" allowfullscreen></iframe>
+                    </div>
+                    <div class="cell-item" style="grid-area: e; display: flex; justify-content: center; height:150px">
+                         <video autoplay loop muted playsinline>
+                            <source src="img/5.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="gallery-cell">
+                    <div class="cell-item" style="grid-area: a;">
+                        <h4>The Gallo VS the nightmares</h4>
+                    </div>
                     <div class="cell-item" style="grid-area: c;">
                         <h5>
                             3D videogame for pc about Mexican toys that fight against famous legends of Mexican
                             culture.<br><br>
                             Responsabilities:
-
                         </h5>
-                        <h5 style="
-                    text-align: left;
-                    padding-left: 05%;">
+                        <h5 style="text-align: left; padding-left: 5%;">
                             o Low-poly modeling, rigging, and animation of characters<br>
                             o Creation of trim sheets for efficient and stylized environment asset texturing<br>
                             o UI<br>
                         </h5>
                     </div>
-
                     <div class="cell-item" style="grid-area: d;">
-                        <iframe width="480" height="270"
-                            src="https://www.youtube.com/embed/Opc_3tA-OKU?si=rz4uAgPiFv5S4dZy" frameborder="0"
-                            allowfullscreen>
-                        </iframe>
+                        <iframe width="480" height="270" src="https://www.youtube.com/embed/Opc_3tA-OKU?si=rz4uAgPiFv5S4dZy" allowfullscreen></iframe>
                     </div>
-
-                    <div class="cell-item" style="grid-area: e;
-                display: flex;
-                justify-content: center; /* Horizontal centering */
-                height:150px">
-                        <video autoplay>
-                            <source src="img/5.mp4" type="video/mp4">
+                    <div class="cell-item" style="grid-area: e; display: flex; justify-content: center; height:150px">
+                        <video autoplay loop muted playsinline>
+                            <source src="img/6.mp4" type="video/mp4">
                         </video>
                     </div>
                 </div>
             </div>
 
-
-
-
-
+            <!-- Blog Section -->
             <div id="blog" style="margin-top: 20px;">
-                <div id="name" style="grid-template-columns:1fr; grid-template-rows: auto; margin:0px;">
-                    <h2 style="font-size:40px;">Restore it Yourself Studio </h2>
-                    <h5 style="color: #202932; text-align: center;">Put yourself in the shoes of a restorer while you
-                        clean, repair, and varnish famous paintings of the western world! </h5>
+                <div id="name" style="grid-template-columns:1fr; grid-template-rows: auto; margin:0;">
+                    <h2 style="font-size:40px;">Restore it Yourself Studio</h2>
+                    <h5 style="color: #202932; text-align: center;">
+                        Put yourself in the shoes of a restorer while you clean, repair, and varnish famous paintings of the western world!
+                    </h5>
 
                     <!-- YouTube Video -->
-                    <div style="margin: 10px 0; display: flex; justify-content: center;">
-                        <iframe width="800" height="450"
-                            src="https://www.youtube.com/embed/FkBJQC18axg?si=9zMgQIJv60-pg0hV" frameborder="0"
-                            allowfullscreen></iframe>
+                    <div style="margin: 40px 0; display: flex; justify-content: center;">
+                        <iframe width="1040" height="585" src="https://www.youtube.com/embed/FkBJQC18axg?si=9zMgQIJv60-pg0hV" allowfullscreen></iframe>
                     </div>
 
                     <!-- First Section -->
-                    <div class="blog-section" style="margin-bottom: 60px;">
-                        <h4 style="color: #202932; margin-bottom: 30px;">Creating the Painting</h4>
+                    <div class="blog-section">
+                        <h4 style="color: #b9b83a;">Creating the Painting</h4>
 
                         <!-- a) text and image side by side -->
                         <div class="media-pair">
                             <div class="media-text">
-                                <h5 style="color: #202932; margin-right: 30px;">I designed a tool to create the
-                                    paintings based on an image input. The mesh’s size and UVs adjust to the proportions
-                                    of the original image.
-                                    To create a mesh through code, vertex, triangles, and UVs are needed. First, I got
-                                    the aspect ratio of the painting.
-                                </h5>
-                            </div>
-                            <div class="media-content"
-                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                                <img src="img/code_ratio.png" style=" width:100%; height: auto; border-radius: 8px;">
+                                <div id="name" style="grid-template-rows: none; column-gap: 20px; margin:0;">
+                                                <div class="dot" style="background-color: #e0a632; width: 10px; height: 10px;"></div>
 
-                                <video controls style="width: 100%; border-radius: 8px;">
+                                <h5 style="color: #202932;">
+                                    I designed a tool to create the paintings based on an image input. The mesh's size and UVs adjust to the proportions of the original image.
+                                    To create a mesh through code, vertex, triangles, and UVs are needed. First, I got the aspect ratio of the painting.
+                                </h5>
+                                </div>
+                                
+                            </div>
+                            <div class="media-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                <img src="img/code_ratio.png" alt="Code for aspect ratio calculation">
+                                <video autoplay loop muted playsinline>
                                     <source src="img/painting_creation.mp4" type="video/mp4">
                                 </video>
                             </div>
@@ -693,90 +627,77 @@
                         <!-- b) text and 2 videos -->
                         <div class="media-pair">
                             <div class="media-text">
-                                <h5 style="color: #202932; margin-right: 30px;">This mesh is made to have x numbers of
-                                    faces, front and back (like a grid). So, based on the aspect ratio, I created the
-                                    faces, first of the front, then of the back with an offset representing the
-                                    thickness of the canvas.
-                                    Then, I created the triangles in the correct order, so that their normal would face
-                                    the correct way.
+                                <div id="name" style="grid-template-rows: none; column-gap: 20px; margin:0;">
+                                                <div class="dot" style="background-color: #e0a632; width: 10px; height: 10px;"></div>
+                                <h5 style="color: #202932;">
+                                    This mesh is made to have x numbers of faces, front and back (like a grid). So, based on the aspect ratio, I created the faces, first of the front, then of the back with an offset representing the thickness of the canvas.
+                                    Then, I created the triangles in the correct order, so that their normal would face the correct way.
                                 </h5>
+                                </div>
                             </div>
-                            <div class="media-content"
-                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                                <video controls style="width: 100%; border-radius: 8px;">
+                            <div class="media-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                <video autoplay loop muted playsinline>
                                     <source src="img/OrdenVertex_02.mp4" type="video/mp4">
                                 </video>
-                                <img src="img/Triangles.jpg" style=" width:100%; height: auto; border-radius: 8px;">
+                                <img src="img/Triangles.jpg" alt="Triangle order diagram">
                             </div>
                         </div>
 
                         <!-- c) text and image -->
                         <div class="media-pair">
                             <div class="media-text">
-                                <h5 style="color: #202932; margin-right: 30px;">Finally, I did the UVs. I wanted to have
-                                    all the textures in the same material. Therefore, I determined that the painting per
-                                    se would occupy the first half of the UV space, while the canvas texture would be on
-                                    the other half. The tricky part was the thickness, as it can vary on size. So, what
-                                    I did was to put their vertex UVs “inside” the canvas texture, so that the texturing
-                                    would be seamless.
-                                    The needed deformations are carried out in the shader, like the canvas texture
-                                    tiling, etc.
-
+                                <div id="name" style="grid-template-rows: none; column-gap: 20px; margin:0;">
+                                                <div class="dot" style="background-color: #e0a632; width: 10px; height: 10px;"></div>
+                                <h5 style="color: #202932;">
+                                    Finally, I did the UVs. I wanted to have all the textures in the same material. Therefore, I determined that the painting per se would occupy the first half of the UV space, while the canvas texture would be on the other half. The tricky part was the thickness, as it can vary on size. So, what I did was to put their vertex UVs "inside" the canvas texture, so that the texturing would be seamless.
+                                    The needed deformations are carried out in the shader, like the canvas texture tiling, etc.
                                 </h5>
+                                </div>
                             </div>
-                            <div class="media-content"
-                                style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">
-                                <img src="img/uvs_mesh.png" style="max-width: 100%; height: auto; border-radius: 8px;">
-                                <img src="img/uv_exp.png" style="max-width: 100%; height: auto; border-radius: 8px;">
-                                <video controls style="width: 100%; border-radius: 8px;">
+                            <div class="media-content" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">
+                                <img src="img/uvs_mesh.png" alt="Mesh UVs">
+                                <img src="img/uv_exp.png" alt="UV explanation">
+                                <video autoplay loop muted playsinline>
                                     <source src="img/uv_test.mp4" type="video/mp4">
-                                </video>
                                 </video>
                             </div>
                         </div>
-
-                        <!-- Continue with remaining sections following the same pattern... -->
                     </div>
 
                     <!-- Second Section -->
-                    <div class="blog-section" style="margin-bottom: 60px;">
-                        <h4 style="color: #202932; margin-bottom: 30px;">Damaging the Painting</h4>
+                    <div class="blog-section">
+                        <h4 style="color: #4ba3db;">Damaging the Painting</h4>
 
                         <!-- a) text and image side by side -->
                         <div class="media-pair">
                             <div class="media-text">
-                                <h5 style="color: #202932; margin-right: 30px;">I created a shader to generate
-                                    “procedural” damage to the painting.
-                                    I imported packed noises with different characteristics. I combined them changing
-                                    their tiling and offset, and using dot product.
+                                <div id="name" style="grid-template-rows: none; column-gap: 20px; margin:0;">
+                                                <div class="dot" style="background-color: #b9b83a; width: 10px; height: 10px;"></div>
+                                <h5 style="color: #202932;">
+                                    I created a shader to generate "procedural" damage to the painting.
+                                    I imported packed noises with different characteristics. I combined them changing their tiling and offset, and using dot product.
                                 </h5>
+                                </div>
                             </div>
                             <div class="media-content">
-                                <img src="img/crack_noise.png" alt="Cracking the painting step a"
-                                    style="max-width: 40%; height: auto; border-radius: 8px;">
+                                <img src="img/crack_noise.png" alt="Crack noise texture" style="max-width: 60%;">
                             </div>
                         </div>
 
                         <!-- b) text and image -->
                         <div class="media-pair">
                             <div class="media-text">
-                                <h5 style="color: #202932; margin-right: 30px;">But this is not procedural enough. I
-                                    wanted to achieve a crack-like noise, so I used a Voronoi noise, which is completely
-                                    different if you change its values. However, this particular node doesn’t let me
-                                    access and modify the edges of the cells. Consequently, I made a Custom Voronoi node
-                                    using hlsl based on Íñigo Quilez’s one. This function calculates the distance from
-                                    edges, so I can make them thinner or thicker. the distance I distorted it by
-                                    plugging in the combined
-                                    noises into its UVs.
+                                <div id="name" style="grid-template-rows: none; column-gap: 20px; margin:0;">
+                                                <div class="dot" style="background-color: #b9b83a; width: 10px; height: 10px;"></div>
+                                <h5 style="color: #202932;">
+                                    But this is not procedural enough. I wanted to achieve a crack-like noise, so I used a Voronoi noise, which is completely different if you change its values. However, this particular node doesn't let me access and modify the edges of the cells. Consequently, I made a Custom Voronoi node using hlsl based on Íñigo Quilez's one. This function calculates the distance from edges, so I can make them thinner or thicker. the distance I distorted it by plugging in the combined noises into its UVs.
                                 </h5>
+                                </div>
                             </div>
-                            <div class="media-content"
-                                style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">
-                                <img src="img/crack_custom.png"
-                                    style="max-width: 100%; height: auto; border-radius: 8px;">
-                                <img src="img/crack_hlsl.png"
-                                    style="max-width: 100%; height: auto; border-radius: 8px;">
-                                <video controls style="width: 100%; border-radius: 8px;">
+                            <div class="media-content" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">
+                                <img src="img/crack_custom.png" alt="Custom crack shader">
+                                <img src="img/crack_hlsl.png" alt="HLSL code">
+                                <video autoplay loop muted playsinline>
                                     <source src="img/crack_edge.mp4" type="video/mp4">
                                 </video>
                             </div>
@@ -785,17 +706,16 @@
                         <!-- c) text, image and video -->
                         <div class="media-pair">
                             <div class="media-text">
-                                <h5 style="color: #202932; margin-right: 30px;">I exposed different parameters that are
-                                    updated randomly each time a painting is selected. This texture is then integrated
-                                    into the painting shader as a mask and as a heightmap for parallax occlusion
-                                    mapping.
+                                <div id="name" style="grid-template-rows: none; column-gap: 20px; margin:0;">
+                                                <div class="dot" style="background-color: #b9b83a; width: 10px; height: 10px;"></div>
+                                <h5 style="color: #202932;">
+                                    I exposed different parameters that are updated randomly each time a painting is selected. This texture is then integrated into the painting shader as a mask and as a heightmap for parallax occlusion mapping.
                                 </h5>
+                                </div>
                             </div>
-                            <div class="media-content"
-                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                                <img src="img/crack_creator.png"
-                                    style="max-width: 100%; height: auto; border-radius: 8px;">
-                                <video controls style="width: 100%; border-radius: 8px;">
+                            <div class="media-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                <img src="img/crack_creator.png" alt="Crack creator interface">
+                                <video autoplay loop muted playsinline>
                                     <source src="img/crack_final.mp4" type="video/mp4">
                                 </video>
                             </div>
@@ -803,39 +723,38 @@
                     </div>
 
                     <!-- Third Section -->
-                    <div class="blog-section" style="margin-bottom: 60px;">
-                        <h4 style="color: #202932; margin-bottom: 30px;">Painting on the Painting</h4>
+                    <div class="blog-section">
+                        <h4 style="color: #e0a632;">Painting on the Painting</h4>
 
                         <!-- a) text and image side by side -->
                         <div class="media-pair">
                             <div class="media-text">
-                                <h5 style="color: #202932; margin-right: 30px;">I designed a painting mechanism using
-                                    shaders and Custom Render Textures.
-                                    First, I obtained the UV coordinates through the mouse position. Using the past and
-                                    current position, I calculated different vectors and their projections, as well as
-                                    length and lerps to get a smooth line.
-
+                                <div id="name" style="grid-template-rows: none; column-gap: 20px; margin:0;">
+                                                <div class="dot" style="background-color: #4ba3db; width: 10px; height: 10px;"></div>
+                                <h5 style="color: #202932;">
+                                    I designed a painting mechanism using shaders and Custom Render Textures.
+                                    First, I obtained the UV coordinates through the mouse position. Using the past and current position, I calculated different vectors and their projections, as well as length and lerps to get a smooth line.
                                 </h5>
+                                </div>
                             </div>
-                            <div class="media-content"
-                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                                <img src="img/paint_coord.png"
-                                    style="max-width: 100%; height: auto; border-radius: 8px;">
-                                <img src="img/paint_line.png"
-                                    style="max-width: 100%; height: auto; border-radius: 8px;">
+                            <div class="media-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                <img src="img/paint_coord.png" alt="Painting coordinates">
+                                <img src="img/paint_line.png" alt="Line creation">
                             </div>
                         </div>
 
                         <!-- b) text and image -->
                         <div class="media-pair">
                             <div class="media-text">
-                                <h5 style="color: #202932; margin-right: 30px;">I imported different brush alphas. Using
-                                    the past mathematical operations, I distorted their UVs so that the alpha “drags” to
-                                    the brush position. Also note that it is possible to change the brush sizes.
+                                 <div id="name" style="grid-template-rows: none; column-gap: 20px; margin:0;">
+                                                <div class="dot" style="background-color: #4ba3db; width: 10px; height: 10px;"></div>
+                                <h5 style="color: #202932;">
+                                    I imported different brush alphas. Using the past mathematical operations, I distorted their UVs so that the alpha "drags" to the brush position. Also note that it is possible to change the brush sizes.
                                 </h5>
+                                 </div>
                             </div>
                             <div class="media-content">
-                                <video controls style="width: 60%; border-radius: 8px;">
+                                <video autoplay loop muted playsinline style="width: 60%;">
                                     <source src="img/paint_brush.mp4" type="video/mp4">
                                 </video>
                             </div>
@@ -844,19 +763,17 @@
                         <!-- c) text, image and video -->
                         <div class="media-pair">
                             <div class="media-text">
-                                <h5 style="color: #202932; margin-right: 30px;">This is a texture that feeds itself to
-                                    get that brush stroke.
-                                    Then, I used another Custom Render Texture to bake the different brushes into one
-                                    single
-                                    texture.
-
+                                 <div id="name" style="grid-template-rows: none; column-gap: 20px; margin:0;">
+                                                <div class="dot" style="background-color: #4ba3db; width: 10px; height: 10px;"></div>
+                                <h5 style="color: #202932;">
+                                    This is a texture that feeds itself to get that brush stroke.
+                                    Then, I used another Custom Render Texture to bake the different brushes into one single texture.
                                 </h5>
+                                 </div>
                             </div>
-                            <div class="media-content"
-                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                                <img src="img/paint_blit.png" alt="Cracking result"
-                                    style="width: 100%; border-radius: 8px;">
-                                <video controls style="width: 100%; border-radius: 8px;">
+                            <div class="media-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                <img src="img/paint_blit.png" alt="Texture baking">
+                                <video autoplay loop muted playsinline>
                                     <source src="img/paint_final.mp4" type="video/mp4">
                                 </video>
                             </div>
@@ -864,125 +781,252 @@
                     </div>
 
                     <!-- Final Section -->
-                    <div class="blog-section" style="margin-bottom: 60px;">
-                        <h4 style="color: #202932; margin-bottom: 30px;">Extras</h4>
+                    <div class="blog-section">
+                        <h4 style="color: #202932;">Extras</h4>
 
-                        <!-- c) text, image and video -->
-                        <div >
-                            <div class="media-content"
-                                style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 15px; align-items: center; ">
-                                <div style="grid-template-rows: 1fr 1fr 1fr; align-items: center; width:100%;">
-                                    <img src="img/extra_paint.png" style="width:100%; border-radius: 8px;">
-                                    <img src="img/extra_canvas.png" style="width:100%; border-radius: 8px;">
-                                    <h5 style="color: #202932; ">I designed the painting and canvas textures in Adobe
-                                        Substance.
-
-                                    </h5>
-                                </div>
-                                <div style="grid-template-rows: 2fr 1fr ; align-items: center;">
-                                    <video controls style="width: 100%; border-radius: 8px;">
-                                        <source src="img/extra_hover.mp4" type="video/mp4">
-                                    </video>
-                                    <h5 style="color: #202932; ">I created a hover shader with a ver subtle fresnel
-                                        animation to indicate which things are interactable.
-
-                                    </h5>
-                                </div>
-                                <div style="grid-template-rows: 2fr 1fr ; align-items: center;">
-                                    <video controls style="width: 100%; border-radius: 8px;">
-                                        <source src="img/painting_creation.mp4" type="video/mp4">
-                                    </video>
-                                    <h5 style="color: #202932; ">The easel adjust automatically to the painting's height.
-
-                                    </h5>
-                                </div>
-                                 <div style="grid-template-rows: 1fr 1fr ; align-items: center;">
-                                                                        <img src="img/extra_trim.png" style="width:70%; border:10px;border-radius: 8px;">
-
-                                    <h5 style="color: #202932; ">I created trimsheets for the walls.
-
-                                    </h5>
-                                </div>
+                        <div class="media-content" style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 15px; align-items: center; margin: 2%;">
+                            <div style="grid-template-rows: 1fr 1fr 1fr; align-items: center; width:100%;">
+                                <img src="img/extra_paint.png" alt="Painting texture" style="width:100%;">
+                                <img src="img/extra_canvas.png" alt="Canvas texture" style="width:100%;">
+                                <h5 style="color: #202932;">
+                                    I designed the painting and canvas textures in Adobe Substance.
+                                </h5>
+                            </div>
+                            <div style="grid-template-rows: 2fr 1fr; align-items: center;">
+                                <video autoplay loop muted playsinline style="width: 100%;">
+                                    <source src="img/extra_hover.mp4" type="video/mp4">
+                                </video>
+                                <h5 style="color: #202932;">
+                                    I created a hover shader with a very subtle fresnel animation to indicate which things are interactable.
+                                </h5>
+                            </div>
+                            <div style="grid-template-rows: 2fr 1fr; align-items: center;">
+                                <video autoplay loop muted playsinline style="width: 100%;">
+                                    <source src="img/painting_creation.mp4" type="video/mp4">
+                                </video>
+                                <h5 style="color: #202932;">
+                                    The easel adjusts automatically to the painting's height.
+                                </h5>
+                            </div>
+                            <div style="grid-template-rows: 1fr 1fr; align-items: center;">
+                                <img src="img/extra_trim.png" alt="Trim sheet" style="width:70%;">
+                                <h5 style="color: #202932;">
+                                    I created trimsheets for the walls.
+                                </h5>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
-
     </div>
 
     <div id="contact">
-        <div id="name" style="
-        grid-template-columns: 1fr 2fr;
-            column-gap: 40px;
-            grid-template-rows:auto auto auto;
-            align-items: center;
-            text-align: center;
-
-            grid-template-areas:
-                'a a'
-                'c d'">
+        <div id="name" style="grid-template-columns: 1fr 2fr; column-gap: 40px; grid-template-rows:auto auto auto; align-items: center; text-align: center; grid-template-areas: 'a a' 'c d'">
             <div style="grid-area: a;">
-                <h2 style="
-            margin-top: auto;
-            margin-bottom: auto;">
-                    Contact me
-                </h2>
+                <h2>Contact me</h2>
             </div>
             <div style="grid-area: c;">
-                <img src="img/LogoGif.gif" alt="GifLogo" height="400" />
+                <img src="img/LogoGif.gif" alt="Bety Vega Logo Animation" height="400">
             </div>
-
             <div style="grid-area: d;">
-                <div id="header" style="margin:10px 0 10px 0;">
-                    <a href="mailto:anabeatrizvegaglz03@gmail.com?subject=Hello&body=Hi,%20I%20came%20from%20your%20webpage,"
-                        style="text-decoration:none !important; text-decoration:none; color: #fff9e1; " target="_blank">
-                        <div style="
-                padding: 01%;">
-                            <h3 style="
-                text-align:justify ;
-                font-weight: 200;">
-                                anabeatrizvegaglz03@gmail.com
-                            </h3>
+                <div id="header" style="margin:10px 0;">
+                    <a href="mailto:anabeatrizvegaglz03@gmail.com?subject=Hello&body=Hi,%20I%20came%20from%20your%20webpage," style="text-decoration:none; color: #fff9e1;" target="_blank">
+                        <div style="padding: 1%;">
+                            <h3>anabeatrizvegaglz03@gmail.com</h3>
                         </div>
+                    </a>
                 </div>
-                <div id="header" style="margin:10px 0 10px 0;">
-                    <a href="https://www.linkedin.com/in/betyvegatechart"
-                        style="text-decoration:none !important; text-decoration:none; color: #fff9e1; " target="_blank">
-
-                        <div style="
-                padding: 01%;">
-                            <h3 style="
-                text-align:justify ;
-                font-weight: 200;">
-                                https://www.linkedin.com/in/betyvegatechart
-                            </h3>
+                <div id="header" style="margin:10px 0;">
+                    <a href="https://www.linkedin.com/in/betyvegatechart" style="text-decoration:none; color: #fff9e1;" target="_blank">
+                        <div style="padding: 1%;">
+                            <h3>https://www.linkedin.com/in/betyvegatechart</h3>
                         </div>
+                    </a>
                 </div>
-                <div id="header" style="margin:10px 0 10px 0;">
-                    <a href="https://ig.me/m/bety_vega_"
-                        style="text-decoration:none !important; text-decoration:none; color: #fff9e1; " target="_blank">
-                        <div style="
-                padding: 01%;">
-                            <h3 style="
-                text-align:justify ;
-                font-weight: 200;">
-                                @bety_vega_
-                            </h3>
+                <div id="header" style="margin:10px 0;">
+                    <a href="https://ig.me/m/bety_vega_" style="text-decoration:none; color: #fff9e1;" target="_blank">
+                        <div style="padding: 1%;">
+                            <h3>@bety_vega_</h3>
                         </div>
+                    </a>
                 </div>
             </div>
-
         </div>
     </div>
-    <!-- Include jQuery (if needed) and Flickity JS at the end of the body -->
+    <!-- Lightbox HTML (place this right before the closing body tag) -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-nav">
+            <button id="lightbox-prev">&lt;</button>
+            <button id="lightbox-next">&gt;</button>
+        </div>
+        <div class="lightbox-content">
+            <!-- Content will be inserted here by JavaScript -->
+        </div>
+    </div>
+
+
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script>
-        // external js: flickity.pkgd.js
-        // Any additional JavaScript initialization would go here
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Flickity carousel
+            const flkty = new Flickity('.gallery', {
+                wrapAround: true,
+                autoPlay: 5000,
+                pauseAutoPlayOnHover: false
+            });
+            
+            // Handle video autoplay with fallback
+            const videos = document.querySelectorAll('video[autoplay]');
+            
+            videos.forEach(video => {
+                const playPromise = video.play();
+                
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        video.controls = true;
+                        video.setAttribute('poster', 'img/video-poster.jpg');
+                    });
+                }
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Flickity carousel
+            const flkty = new Flickity('.gallery', {
+                wrapAround: true,
+                autoPlay: 5000,
+                pauseAutoPlayOnHover: false
+            });
+            
+            // Handle video autoplay with fallback
+            const videos = document.querySelectorAll('video[autoplay]');
+            
+            videos.forEach(video => {
+                const playPromise = video.play();
+                
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        video.controls = true;
+                        video.setAttribute('poster', 'img/video-poster.jpg');
+                    });
+                }
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Lightbox functionality
+            const lightbox = document.getElementById('lightbox');
+            const lightboxContent = document.querySelector('.lightbox-content');
+            const lightboxClose = document.querySelector('.lightbox-close');
+            const lightboxPrev = document.getElementById('lightbox-prev');
+            const lightboxNext = document.getElementById('lightbox-next');
+
+            // Get all media elements in blog section
+            const blogMedia = document.querySelectorAll('#blog img, #blog video');
+            let currentMediaIndex = 0;
+
+            // Add clickable class to all media in blog
+            blogMedia.forEach(media => {
+                media.classList.add('clickable-media');
+                
+                media.addEventListener('click', function() {
+                    openLightbox(media);
+                });
+            });
+
+            function openLightbox(media) {
+                currentMediaIndex = Array.from(blogMedia).indexOf(media);
+                updateLightboxContent();
+                lightbox.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+
+            function updateLightboxContent() {
+                const media = blogMedia[currentMediaIndex];
+                lightboxContent.innerHTML = '';
+                
+                if (media.tagName === 'IMG') {
+                    const img = document.createElement('img');
+                    img.src = media.src;
+                    img.alt = media.alt;
+                    lightboxContent.appendChild(img);
+                } else if (media.tagName === 'VIDEO') {
+                    const video = document.createElement('video');
+                    video.src = media.querySelector('source').src;
+                    video.controls = true;
+                    video.autoplay = true;
+                    lightboxContent.appendChild(video);
+                }
+            }
+
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                
+                // Pause any playing videos
+                const videos = lightboxContent.querySelectorAll('video');
+                videos.forEach(video => {
+                    video.pause();
+                });
+            }
+
+            function navigateLightbox(direction) {
+                currentMediaIndex += direction;
+                
+                if (currentMediaIndex < 0) {
+                    currentMediaIndex = blogMedia.length - 1;
+                } else if (currentMediaIndex >= blogMedia.length) {
+                    currentMediaIndex = 0;
+                }
+                
+                updateLightboxContent();
+            }
+
+            // Event listeners
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightboxPrev.addEventListener('click', () => navigateLightbox(-1));
+            lightboxNext.addEventListener('click', () => navigateLightbox(1));
+
+            // Close when clicking outside content
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (lightbox.style.display === 'flex') {
+                    if (e.key === 'Escape') {
+                        closeLightbox();
+                    } else if (e.key === 'ArrowLeft') {
+                        navigateLightbox(-1);
+                    } else if (e.key === 'ArrowRight') {
+                        navigateLightbox(1);
+                    }
+                }
+            });
+        });
     </script>
 </body>
-
 </html>
